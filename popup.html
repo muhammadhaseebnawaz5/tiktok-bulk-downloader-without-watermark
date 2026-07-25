@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SocialBulk Pro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Premium Header -->
+    <header class="app-header" id="app-header">
+      <div class="header-main">
+        <h1 class="logo">SocialBulk <span class="logo-accent">Pro</span></h1>
+        <p class="subtitle">Unified Harvester & Downloader</p>
+      </div>
+      <div class="platform-badge" id="platform-badge">
+        <span class="pulse-dot"></span>
+        <span id="platform-name">Detecting...</span>
+      </div>
+    </header>
+
+    <!-- Alert Note (Optional tip info) -->
+    <div id="notice" class="notice-bar">
+      Open a profile page to start harvesting media.
+    </div>
+
+    <!-- Quick Stats Card -->
+    <div class="card stats-card">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-num" id="stat-total">0</span>
+          <span class="stat-label">Total Harvested</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" id="stat-selected">0</span>
+          <span class="stat-label">Matching Filters</span>
+        </div>
+      </div>
+      <button id="btn-toggle-acquire" class="btn-acquire">Start Acquiring</button>
+    </div>
+
+    <!-- Unified Filter Configurations -->
+    <div class="card filters-card">
+      <h3 class="card-title">Acquisition & Filter Rules</h3>
+      
+      <!-- Newest N Limit -->
+      <label class="filter-row">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="chk-newest">
+          <span class="custom-checkbox"></span>
+        </div>
+        <span class="filter-text">Limit to newest</span>
+        <input type="number" id="val-newest" value="10" min="1" class="input-number">
+        <span class="unit-label">items</span>
+      </label>
+
+      <!-- Date Range Filter -->
+      <label class="filter-row-stack">
+        <div class="filter-row-top">
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="chk-date">
+            <span class="custom-checkbox"></span>
+          </div>
+          <span class="filter-text">Filter by date range</span>
+        </div>
+        <div class="date-inputs-row">
+          <div class="date-input-group">
+            <span class="date-label">From:</span>
+            <input type="date" id="val-date-from" class="input-date">
+          </div>
+          <div class="date-input-group">
+            <span class="date-label">To:</span>
+            <input type="date" id="val-date-to" class="input-date">
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <!-- Status & Micro progress indicator -->
+    <div class="progress-section">
+      <div class="status-wrapper">
+        <span id="status-text">Ready: 0 items selected</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+      </div>
+    </div>
+
+    <!-- Action Buttons Footer -->
+    <footer class="actions-footer">
+      <button id="btn-export" class="btn-action btn-export" title="Export as JSON">
+        <span class="btn-icon">📤</span> Export JSON
+      </button>
+      <button id="btn-folder" class="btn-action btn-folder" title="Save to Folder sequentially">
+        <span class="btn-icon">📥</span> Save to Folder
+      </button>
+      <button id="btn-zip" class="btn-action btn-zip" title="Package and download as ZIP">
+        <span class="btn-icon">📦</span> Download .zip
+      </button>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
